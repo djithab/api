@@ -1,1 +1,51 @@
-{"info":{"title":"Mitarbeiter","description":"MA","version":"1.0.0"},"openapi":"3.0.0"}
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Mitarbeiter",
+    "description": "MA",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/rest/Mitabeiter": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemasMitarbeiter"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/Mitabeiter/{mitarbeiter}": {
+      "get": {}
+    }
+  },
+  "components": {
+    "schemas": {
+      "defaultResponse": {
+        "properties": {
+          "success": {
+            "description": "gibt Auskunft Ã¼ber den Erfolg der Abfrage",
+            "type": "boolean"
+          },
+          "requestId": {},
+          "data": {},
+          "error": {}
+        }
+      },
+      "Mitarbeiter": {
+        "properties": {
+          "data": {},
+          "asd": {
+            "$ref": "#/components/schemas/defaultResponse"
+          }
+        }
+      }
+    }
+  }
+}
