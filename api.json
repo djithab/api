@@ -22,7 +22,9 @@
       }
     },
     "/rest/Mitabeiter/{mitarbeiter}": {
-      "get": {}
+      "get": {
+        "description": "Gibt die Daten des Mitarbeiters `mitarbeiter` zurÃ¼ck."
+      }
     }
   },
   "components": {
@@ -30,7 +32,7 @@
       "defaultResponse": {
         "properties": {
           "success": {
-            "description": "gibt Auskunft Ã¼ber den Erfolg der Abfrage",
+            "description": "gibt Auskunft ÃÂ¼ber den Erfolg der Abfrage",
             "type": "boolean"
           },
           "requestId": {},
