@@ -1,0 +1,230 @@
+---
+openapi: 3.0.0
+
+info:
+  title: Mitarbeiter
+  description: MA
+  license:
+    name: Mozilla 2.0
+    url: 'https://www.mozilla.org/en-US/MPL/2.0/'
+  version: 1.0.0
+
+servers:
+  - url: http://wsdomp.m019.local/rest
+    description: primärer Dominoserver
+  - url: http://wsdoms.m019.local/rest
+    description: sekundärer Dominoserver
+
+paths:
+  /Mitabeiter:
+    get:
+      summary: lade Mitarbeiterdaten
+      responses:
+        '200':
+          description: Mitarbeiterdaten des angemeldeten Nutzers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mitarbeiter'
+  '/Mitabeiter/{mitarbeiter}':
+    get:
+      summary: lade Mitarbeiterdaten
+      description: "Gibt die Daten des Mitarbeiters `mitarbeiter` zurÃ\x83Â\x83Ã\x82Â¼ck."
+      responses:
+        '200':
+          description: Mitarbeiterdaten des angegebenen Mitarbeiters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/xx'
+        '401':
+          description: Authentifizierung notwändig
+    parameters:
+      - name: mitarbeiter
+        in: path
+        description: 'ID eines Mitarbeiters. Kann Kurzzeichen, Personalnummer, Name oder auch r019c<Kurzzeichen> sein.'
+        required: true
+        schema:
+          type: string
+
+components:
+  schemas:
+    defaultResponse:
+      type: object
+      properties:
+        success:
+          description: "gibt Auskunft Ã\x83Â\x83Ã\x82Â\x83Ã\x83Â\x82Ã\x82Â¼ber den Erfolg der Abfrage"
+          type: boolean
+        requestId: {}
+        data: {}
+        error: {}
+    Mitarbeiter:
+      type: object
+      properties:
+        asd:
+          $ref: '#/components/schemas/defaultResponse'
+    filiale:
+      type: object
+      properties:
+        filiale:
+          type: string
+        filialeAllgemein:
+          type: string
+        firmenbuchGerichtsstand:
+          type: string
+        uid:
+          type: string
+        firmenbuchNummer:
+          type: string
+        url:
+          type: string
+        dvr:
+          type: string
+        ort:
+          type: string
+        postleitzahl:
+          type: string
+        strasse:
+          type: string
+    telefonDaten:
+      type: object
+      properties:
+        fax:
+          type: string
+        durchwahl:
+          type: string
+        durchwahlFiliale:
+          type: string
+        handy:
+          type: string
+        mgfImport:
+          type: boolean
+    name:
+      type: object
+      properties:
+        hierarchisch:
+          description: hierarchische Darstellung des Notes-Namen
+          type: object
+          properties:
+            cn:
+              description: Commonteil
+              type: string
+            a:
+              type: string
+            c:
+              type: string
+            q:
+              type: string
+            g:
+              type: string
+            i:
+              type: string
+            o:
+              type: string
+            ou:
+              description: Organisation Units
+              type: object
+              properties:
+                '1':
+                  description: Organisation Unit 1
+                  type: string
+                '2':
+                  description: Organisation Unit 2
+                  type: string
+                '3':
+                  description: Organisation Unit 3
+                  type: string
+                '4':
+                  description: Organisation Unit 4
+                  type: string
+            p:
+              type: string
+            s:
+              type: string
+        vorname:
+          type: string
+        vornameMitUmlauten:
+          type: string
+        nachname:
+          type: string
+        nachnameMitUmlauten:
+          type: string
+        titel:
+          type: string
+        titel2:
+          type: string
+        titelIntern:
+          type: string
+        titelName:
+          type: string
+    xx:
+      title: Root Type for xx
+      description: The root of the xx type's schema.
+      type: object
+      properties:
+        abteilung:
+          type: string
+        aisFilialnummer:
+          type: string
+        anrede:
+          type: string
+        assistenz:
+          type: string
+        beraterkopf:
+          type: string
+        beraterkopfKompakt:
+          type: string
+        wuestenrot:
+          type: object
+          properties:
+            beraterNummer:
+              type: string
+            filiale:
+              type: string
+        vlv:
+          type: object
+          properties:
+            beraterNummer:
+              type: string
+            beraterNummerPrivat:
+              type: string
+        domain:
+          type: string
+        email:
+          type: string
+        emailPersoenlich:
+          type: string
+        foto:
+          type: object
+          properties:
+            base64:
+              type: string
+            url:
+              type: string
+        kurzzeichen:
+          type: string
+        mfg:
+          type: string
+        personalnummer:
+          type: string
+        position:
+          type: string
+        name:
+          $ref: '#/components/schemas/name'
+        signatur:
+          type: object
+          properties:
+            ohneAktion:
+              type: string
+            mitAktion:
+              type: string
+        telefon:
+          $ref: '#/components/schemas/telefonDaten'
+        vorgesetzt:
+          type: string
+        filiale:
+          $ref: '#/components/schemas/filiale'
+        userInformation:
+          type: array
+          items: {}
+  
