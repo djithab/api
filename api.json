@@ -8,6 +8,7 @@
   "paths": {
     "/rest/Mitabeiter": {
       "get": {
+        "summary": "lade Mitarbeiterdaten",
         "responses": {
           "200": {
             "content": {
@@ -23,6 +24,7 @@
     },
     "/rest/Mitabeiter/{mitarbeiter}": {
       "get": {
+        "summary": "lade Mitarbeiterdaten",
         "description": "Gibt die Daten des Mitarbeiters `mitarbeiter` zurÃÂ¼ck.",
         "responses": {
           "200": {
@@ -68,6 +70,61 @@
           "data": {},
           "asd": {
             "$ref": "#/components/schemas/defaultResponse"
+          }
+        }
+      },
+      "filiale": {
+        "type": "object",
+        "properties": {
+          "filiale": {
+            "type": "string"
+          },
+          "filialeAllgemein": {
+            "type": "string"
+          },
+          "firmenbuchGerichtsstand": {
+            "type": "string"
+          },
+          "uid": {
+            "type": "string"
+          },
+          "firmenbuchNummer": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "dvr": {
+            "type": "string"
+          },
+          "ort": {
+            "type": "string"
+          },
+          "postleitzahl": {
+            "type": "string"
+          },
+          "strasse": {
+            "type": "string"
+          }
+        }
+      },
+      "telefonDaten": {
+        "type": "object",
+        "properties": {
+          "fax": {
+            "type": "string"
+          },
+          "durchwahl": {
+            "type": "string"
+          },
+          "durchwahlFiliale": {
+            "type": "string"
+          },
+          "handy": {
+            "type": "string"
+          },
+          "mgfImport": {
+            "type": "boolean"
           }
         }
       },
@@ -238,62 +295,13 @@
             }
           },
           "telefon": {
-            "type": "object",
-            "properties": {
-              "fax": {
-                "type": "string"
-              },
-              "durchwahl": {
-                "type": "string"
-              },
-              "durchwahlFiliale": {
-                "type": "string"
-              },
-              "handy": {
-                "type": "string"
-              },
-              "mgfImport": {
-                "type": "boolean"
-              }
-            }
+            "$ref": "#/components/schemas/telefonDaten"
           },
           "vorgesetzt": {
             "type": "string"
           },
           "filiale": {
-            "type": "object",
-            "properties": {
-              "filiale": {
-                "type": "string"
-              },
-              "filialeAllgemein": {
-                "type": "string"
-              },
-              "firmenbuchGerichtsstand": {
-                "type": "string"
-              },
-              "uid": {
-                "type": "string"
-              },
-              "firmenbuchNummer": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string"
-              },
-              "dvr": {
-                "type": "string"
-              },
-              "ort": {
-                "type": "string"
-              },
-              "postleitzahl": {
-                "type": "string"
-              },
-              "strasse": {
-                "type": "string"
-              }
-            }
+            "$ref": "#/components/schemas/filiale"
           },
           "userInformation": {
             "type": "array",
