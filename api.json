@@ -23,7 +23,7 @@
     },
     "/rest/Mitabeiter/{mitarbeiter}": {
       "get": {
-        "description": "Gibt die Daten des Mitarbeiters `mitarbeiter` zurÃ¼ck.",
+        "description": "Gibt die Daten des Mitarbeiters `mitarbeiter` zurÃÂ¼ck.",
         "responses": {
           "200": {
             "content": {
@@ -55,7 +55,7 @@
       "defaultResponse": {
         "properties": {
           "success": {
-            "description": "gibt Auskunft ÃÂ¼ber den Erfolg der Abfrage",
+            "description": "gibt Auskunft ÃÂÃÂ¼ber den Erfolg der Abfrage",
             "type": "boolean"
           },
           "requestId": {},
@@ -68,6 +68,236 @@
           "data": {},
           "asd": {
             "$ref": "#/components/schemas/defaultResponse"
+          }
+        }
+      },
+      "xx": {
+        "title": "Root Type for xx",
+        "description": "The root of the xx type's schema.",
+        "type": "object",
+        "properties": {
+          "abteilung": {
+            "type": "string"
+          },
+          "aisFilialnummer": {
+            "type": "string"
+          },
+          "anrede": {
+            "type": "string"
+          },
+          "assistenz": {
+            "type": "string"
+          },
+          "beraterkopf": {
+            "type": "string"
+          },
+          "beraterkopfKompakt": {
+            "type": "string"
+          },
+          "wuestenrot": {
+            "type": "object",
+            "properties": {
+              "beraterNummer": {
+                "type": "string"
+              },
+              "filiale": {
+                "type": "string"
+              }
+            }
+          },
+          "vlv": {
+            "type": "object",
+            "properties": {
+              "beraterNummer": {
+                "type": "string"
+              },
+              "beraterNummerPrivat": {
+                "type": "string"
+              }
+            }
+          },
+          "domain": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "emailPersoenlich": {
+            "type": "string"
+          },
+          "foto": {
+            "type": "object",
+            "properties": {
+              "base64": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            }
+          },
+          "kurzzeichen": {
+            "type": "string"
+          },
+          "mfg": {
+            "type": "string"
+          },
+          "personalnummer": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string"
+          },
+          "name": {
+            "type": "object",
+            "properties": {
+              "hierarchisch": {
+                "type": "object",
+                "properties": {
+                  "cn": {
+                    "type": "string"
+                  },
+                  "a": {
+                    "type": "string"
+                  },
+                  "c": {
+                    "type": "string"
+                  },
+                  "q": {
+                    "type": "string"
+                  },
+                  "g": {
+                    "type": "string"
+                  },
+                  "i": {
+                    "type": "string"
+                  },
+                  "o": {
+                    "type": "string"
+                  },
+                  "ou": {
+                    "type": "object",
+                    "properties": {
+                      "1": {
+                        "type": "string"
+                      },
+                      "2": {
+                        "type": "string"
+                      },
+                      "3": {
+                        "type": "string"
+                      },
+                      "4": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "p": {
+                    "type": "string"
+                  },
+                  "s": {
+                    "type": "string"
+                  }
+                }
+              },
+              "vorname": {
+                "type": "string"
+              },
+              "vornameMitUmlauten": {
+                "type": "string"
+              },
+              "nachname": {
+                "type": "string"
+              },
+              "nachnameMitUmlauten": {
+                "type": "string"
+              },
+              "titel": {
+                "type": "string"
+              },
+              "titel2": {
+                "type": "string"
+              },
+              "titelIntern": {
+                "type": "string"
+              },
+              "titelName": {
+                "type": "string"
+              }
+            }
+          },
+          "signatur": {
+            "type": "object",
+            "properties": {
+              "ohneAktion": {
+                "type": "string"
+              },
+              "mitAktion": {
+                "type": "string"
+              }
+            }
+          },
+          "telefon": {
+            "type": "object",
+            "properties": {
+              "fax": {
+                "type": "string"
+              },
+              "durchwahl": {
+                "type": "string"
+              },
+              "durchwahlFiliale": {
+                "type": "string"
+              },
+              "handy": {
+                "type": "string"
+              },
+              "mgfImport": {
+                "type": "boolean"
+              }
+            }
+          },
+          "vorgesetzt": {
+            "type": "string"
+          },
+          "filiale": {
+            "type": "object",
+            "properties": {
+              "filiale": {
+                "type": "string"
+              },
+              "filialeAllgemein": {
+                "type": "string"
+              },
+              "firmenbuchGerichtsstand": {
+                "type": "string"
+              },
+              "uid": {
+                "type": "string"
+              },
+              "firmenbuchNummer": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "dvr": {
+                "type": "string"
+              },
+              "ort": {
+                "type": "string"
+              },
+              "postleitzahl": {
+                "type": "string"
+              },
+              "strasse": {
+                "type": "string"
+              }
+            }
+          },
+          "userInformation": {
+            "type": "array",
+            "items": {}
           }
         }
       }
