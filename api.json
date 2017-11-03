@@ -23,8 +23,31 @@
     },
     "/rest/Mitabeiter/{mitarbeiter}": {
       "get": {
-        "description": "Gibt die Daten des Mitarbeiters `mitarbeiter` zurÃ¼ck."
-      }
+        "description": "Gibt die Daten des Mitarbeiters `mitarbeiter` zurÃ¼ck.",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemasMitarbeiter"
+                }
+              }
+            }
+          },
+          "401": {}
+        }
+      },
+      "parameters": [
+        {
+          "name": "mitarbeiter",
+          "in": "path",
+          "description": "ID eines Mitarbeiters. Kann Kurzzeichen, Personalnummer, Name oder auch r019c<Kurzzeichen> sein.",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
     }
   },
   "components": {
