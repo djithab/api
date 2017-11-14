@@ -24,12 +24,28 @@
             }
           }
         }
+      },
+      "post": {
+        "responses": {
+          "200": {}
+        },
+        "requestBody": {
+          "description": "theBody",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemasMitarbeiter"
+              }
+            }
+          },
+          "required": true
+        }
       }
     },
     "/rest/Mitabeiter/{mitarbeiter}": {
       "get": {
         "summary": "lade Mitarbeiterdaten",
-        "description": "Gibt die Daten des Mitarbeiters `mitarbeiter` zurÃÂÃÂ¼ck.",
+        "description": "Gibt die Daten des Mitarbeiters `mitarbeiter` zurÃÂÃÂÃÂÃÂ¼ck.",
         "responses": {
           "200": {
             "content": {
@@ -61,7 +77,7 @@
       "defaultResponse": {
         "properties": {
           "success": {
-            "description": "gibt Auskunft ÃÂÃÂÃÂÃÂ¼ber den Erfolg der Abfrage",
+            "description": "gibt Auskunft ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¼ber den Erfolg der Abfrage",
             "type": "boolean"
           },
           "requestId": {},
